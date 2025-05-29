@@ -4,100 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Electro Hoterm SRL</title>
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome ikonok -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- AOS görgető-animáció -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: #f9fafb;
-    }
-    header {
-      background: #0051ba;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin: 0.5rem 0; font-size: 1.1rem; }
-    .webshop-btn {
-      background: #ef4444; color: white;
-      padding: 0.75rem 1.5rem; border-radius: 5px;
-      text-decoration: none; font-weight: bold;
-      display: inline-block; margin-top: 1rem;
-    }
-    section {
-      padding: 2rem 1rem;
-      text-align: center;
-      opacity: 0; transform: translateY(30px);
-      transition: all 0.6s ease-in-out;
-    }
-    section.visible {
-      opacity: 1; transform: translateY(0);
-    }
-    .services { background: #facc15; }
-    .services h2 { color: #1e3a8a; }
-    .service-grid {
-      display: flex; justify-content: center;
-      flex-wrap: wrap; gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .service-card {
-      width: 140px; padding: 1rem;
-      background: white; border-radius: 10px;
-      font-weight: bold;
-    }
-    .about { background: #06b6d4; color: white; }
-    .contact a { color: #1e40af; text-decoration: none; }
-    footer {
-      background: #e5e7eb; padding: 1rem;
-      text-align: center;
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Roboto',sans-serif;line-height:1.6;color:#333;background:#f9fafb}
+    nav{position:fixed;top:0;left:0;width:100%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);z-index:10}
+    nav .container{display:flex;justify-content:space-between;align-items:center;padding:1rem}
+    nav a{color:#333;text-decoration:none;margin-left:1rem;font-weight:500}
+    nav a.btn{background:#e02f2f;color:#fff;padding:.5rem 1rem;border-radius:4px}
+    header.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      background:#0051ba;color:#fff;padding:6rem 1rem;margin-top:60px}
+    header.hero h1{font-size:2.5rem;margin-bottom:1rem}
+    header.hero p{font-size:1.125rem;margin-bottom:1.5rem}
+    section{padding:4rem 1rem}
+    .services{background:#facc15;text-align:center}
+    .services h2{font-size:2rem;margin-bottom:2rem;color:#1e3a8a}
+    .grid{display:grid;gap:1.5rem}
+    .grid-4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.05);text-align:center}
+    .card i{font-size:2rem;margin-bottom:.75rem;color:#0051ba}
+    .about{background:#06b6d4;color:#fff;text-align:center}
+    .about h2{font-size:2rem;margin-bottom:1rem}
+    .gallery{background:#fff;text-align:center}
+    .gallery h2{font-size:2rem;margin-bottom:2rem}
+    .gallery-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+    .gallery-grid img{width:100%;border-radius:6px}
+    .contact{background:#dc2626;color:#fff;text-align:center}
+    .contact h2{font-size:2rem;margin-bottom:1rem}
+    .contact p{margin:0.5rem 0}
+    footer{background:#1e293b;color:#ccc;text-align:center;padding:1.5rem;font-size:.9rem}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Electro Hoterm SRL</h1>
-    <p>Professzionális villanyszerelés és fűtésszerelés</p>
-    <a href="#" class="webshop-btn">WEBSHOP</a>
+
+  <!-- Navigáció -->
+  <nav>
+    <div class="container">
+      <div class="logo"><strong>Electro Hoterm</strong></div>
+      <div>
+        <a href="#home"><i class="fas fa-home"></i> Főoldal</a>
+        <a href="#services"><i class="fas fa-bolt"></i> Szolgáltatások</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> Rólunk</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Galéria</a>
+        <a href="#contact"><i class="fas fa-phone-alt"></i> Kapcsolat</a>
+        <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Webshop</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero" data-aos="fade-up">
+    <h1>Okos fűtés és tiszta energia</h1>
+    <p>Professzionális villanyszerelés, fűtésszerelés és napelem rendszerek</p>
+    <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Látogass el webshopunkba</a>
   </header>
 
-  <section class="services">
+  <!-- Szolgáltatások -->
+  <section id="services" class="services" data-aos="fade-up">
     <h2>Szolgáltatásaink</h2>
-    <div class="service-grid">
-      <div class="service-card" style="background:#8b5cf6; color:white;">Villanyszerelés</div>
-      <div class="service-card" style="background:#3b82f6; color:white;">Fűtésszerelés</div>
-      <div class="service-card" style="background:#f472b6; color:white;">Napelemek</div>
-      <div class="service-card" style="background:#10b981; color:white;">Okosotthonok</div>
+    <div class="grid grid-4">
+      <div class="card" data-aos="zoom-in"><i class="fas fa-bolt"></i><h3>Villanyszerelés</h3></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-thermometer-half"></i><h3>Fűtésszerelés</h3></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-solar-panel"></i><h3>Napelemek</h3></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-home"></i><h3>Okosotthon</h3></div>
     </div>
   </section>
 
-  <section class="about">
+  <!-- Rólunk -->
+  <section id="about" class="about" data-aos="fade-right">
     <h2>Rólunk</h2>
-    <p>Cégünk több mint 10 éves tapasztalattal rendelkezünk a villanyszerelés és fűtésszerelés terén, lakossági és ipari projektek esetén egyaránt.</p>
+    <p>Cégünk több mint 10 éves tapasztalattal foglalkozik villanyszereléssel, fűtésszereléssel és napelemrendszerek telepítésével. Lakossági és ipari projektekben egyaránt hatékony, gyors és precíz munkát végzünk.</p>
   </section>
 
-  <section class="contact">
+  <!-- Galéria -->
+  <section id="gallery" class="gallery" data-aos="fade-left">
+    <h2>Galéria</h2>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/300x200" alt="Referencia 1">
+      <img src="https://via.placeholder.com/300x200" alt="Referencia 2">
+      <img src="https://via.placeholder.com/300x200" alt="Referencia 3">
+      <img src="https://via.placeholder.com/300x200" alt="Referencia 4">
+    </div>
+  </section>
+
+  <!-- Kapcsolat -->
+  <section id="contact" class="contact" data-aos="fade-up">
     <h2>Kapcsolat</h2>
-    <p>📞 <a href="tel:+40743062253">0743 062 253</a></p>
-    <p>📧 <a href="mailto:electrohoterm@gmail.com">electrohoterm@gmail.com</a></p>
-    <p>📍 Gyergyóalfalu, Hargita megye</p>
+    <p><i class="fas fa-phone-alt"></i> 0743 062 253</p>
+    <p><i class="fas fa-envelope"></i> electrohoterm@gmail.com</p>
+    <p><i class="fas fa-map-marker-alt"></i> Gyergyóalfalu, Hargita megye</p>
   </section>
 
-  <footer>
+  <footer data-aos="fade-up">
     © 2025 Electro Hoterm SRL – Minden jog fenntartva.
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    document.querySelectorAll('section').forEach(sec=>{
-      const obs = new IntersectionObserver(([e])=>{
-        if(e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      },{threshold:0.1});
-      obs.observe(sec);
-    });
+    AOS.init({ duration: 800, once: true });
   </script>
 </body>
 </html>
